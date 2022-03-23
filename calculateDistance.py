@@ -10,13 +10,11 @@ def findCEP(cep):
             return municipio
 
 def coordinatesFinder(cep):
-    ibge = []
     if len(cep) > 8:
         cep = cep[0:8]
     elif len(cep) < 8:
-        while len(cep) < 8:
-            cep+='0'
-    ibge.append(cep)
-    return ibge
+        cep = None
+
+    return cep
 
 

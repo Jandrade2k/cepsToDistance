@@ -8,10 +8,14 @@ def extractorCeps():
 
         cepDestinos = []
         cepOrigens = []
+        nuPedidos = []
 
         for i in table:
             cepDestino = i[1]
             cepOrigem = i[6]
+            nuPedido = i[2]
             cepDestinos.append(cepDestino)
             cepOrigens.append(cepOrigem)
-    return cepDestinos, cepOrigens
+            nuPedidos.append(nuPedido)
+
+    return cepDestinos, cepOrigens, nuPedidos
