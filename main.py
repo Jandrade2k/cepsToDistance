@@ -24,7 +24,10 @@ for origem in cepDestinos:
 
 result = []
 
+file = open('./base copy.csv', 'w')
+
 for i in range(len(cepDestinos)):
+    print('baixando dados '+i+' de '+len(cepDestinos))
     time.sleep(2)
     if cepDestinos[i] == None or cepDestinos[i] == 'CEP Destino':
         result.append(None)
@@ -37,10 +40,5 @@ for i in range(len(cepDestinos)):
             result.append(fin)
         else:
             result.append(fin.text)
-
-file = open('./base copy.csv', 'w')
-
-writer = csv.writer(file)
-
-writer.writerow(result)
-
+            writer = csv.writer(file)
+            writer.writerow(fin.text)
